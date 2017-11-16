@@ -1,0 +1,30 @@
+<div class="content">
+    <div class="max-size-window">
+        <div class="lesson">
+            <H1>Your pages in {{title}}</H1>
+            <form action="" class="form-class">
+                <label><input type="text" placeholder={{value_1}} required></label>
+                <label><input type="text" placeholder={{value_2}} required></label>
+                <label><input type="text" placeholder={{value_3}} required></label>
+                <label><input type="text" placeholder={{value_4}} required></label>
+                <label><input type="text" placeholder={{value_5}} required></label>
+                <p>{{1400956671914 | date: 'dd-MM-yyyy'}}</p>
+                <button>Отправить</button>
+            </form>
+        </div>
+        <div class="lesson">
+            <div class="carousel-draw-blocks">
+                <!-- let создаёт переменную "usersCards" и ищет нужную переменную внутри файла app.component -->
+                <app-carousel
+                        class="width-block"
+                        *ngFor="let usersCards of usersCards"
+                        [searchArr]="usersCards"
+                ></app-carousel> <!-- Ангулровская штука позволянт пробежаться по массиву через for -->
+                <!--
+                    [] - указывает, что это объект;
+                    [searchArr] с помощью параметра, устанавливаем связть с массивом в файле app.component.ts
+                 -->
+            </div>
+        </div>
+    </div>
+</div>

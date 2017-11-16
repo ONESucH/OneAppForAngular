@@ -1,0 +1,73 @@
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    width: auto;
+    min-height: 100vh;
+    background: silver;
+}
+
+.max-size-window {
+    max-width: 1100px;
+    border: 1px solid black;
+}
+
+.lesson {
+    min-height: 50vh;
+    border-bottom: 3px solid orange;
+}
+
+.lesson:nth-child(even) {
+    background: #475c65;
+    color: #fff;
+}
+
+.form-class {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: stretch;
+    width: 100%;
+}
+
+.form-class label {
+    position: relative;
+    display: block;
+    border-bottom: 1px solid #fff;
+}
+
+.form-class input {
+    padding: 15px;
+    width: calc(100% - 30px);
+    border: none;
+    outline: none;
+    background: #475c65;
+    color: #fff;
+}
+
+.form-class button {
+    outline: none;
+    background: #475c65;
+    padding: 15px;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+}
+.form-class button:hover {
+    background: #fff;
+    transition: 1s;
+    color: #475c65;
+}
+
+
+.carousel-draw-blocks {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.width-block {
+    width: 250px;
+}
