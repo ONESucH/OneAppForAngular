@@ -1,23 +1,17 @@
-import { Component } from '@angular/core';
-import { GetUsersService } from './get-users/get-users.service';
+import { Http } from '@angular/http';
+import {Injectable} from '@angular/core';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [GetUsersService]
-})
+@Injectable()
 
-export class AppComponent {
-    /* урок 1 */
-    value_1 = 'Введите первое значение';
-    value_2 = 'Введите второе значение';
-    value_3 = 'Введите третье значение';
-    value_4 = 'Введите четвертое значение';
-    value_5 = 'Введите пятое значение';
-    title = 'App';
-    /* урок 2 */
-    usersCards = [
+export class GetUsersService {
+
+    constructor(private http: Http) {}
+
+    getUsers() {
+        return this.http.get('https://randomuser.me/api/?inc=gender,name,picture,location&results=8&nat=gb');
+    }
+
+    users = [
         {
             name: 'Name_1',
             img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe8v7eSZ32kBxQvA2mmJ1kXSTid8L_1pdQE8iN9LyEr3v-Fz01mQ',
@@ -54,13 +48,4 @@ export class AppComponent {
             bottomText: 'bottomTextLink'
         }
     ];
-    /* Урок 3 */
-    users = [];
-    constructor(private getUsersService: GetUsersService) { // переменная с которой будем работать в дальнейшем
-        this.users = this.getUsersService.users;
-    }
-    /* Урок 4 */
-    ngOnInit() {
-        this.getUsersService.getUsers();
-    }
 }
